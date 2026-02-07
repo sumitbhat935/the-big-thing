@@ -1,0 +1,26 @@
+{
+  "tickers": ["AAPL", "MSFT", "NVDA", "AMZN", "META"],
+  "morning_minutes": 90,
+  "interval": "5m",
+  "period": "10d",
+  "top_n": 15,
+  "weights": {
+    "gap_pct": 0.2,
+    "early_return": 0.25,
+    "volume_spike": 0.2,
+    "trend_slope": 0.2,
+    "rsi": 0.15
+  },
+  "factor_directions": {
+    "gap_pct": "high",
+    "early_return": "high",
+    "volume_spike": "high",
+    "trend_slope": "high",
+    "rsi": "high"
+  },
+  "risk": {
+    "portfolio_stop_loss_pct": -0.5,
+    "take_profit_pct": 3.0,
+    "check_interval_minutes": 15
+  }
+}

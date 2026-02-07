@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bigthing"
+version = "0.1.0"
+description = "Stock recommendation and portfolio monitoring tool."
+requires-python = ">=3.9"
+dependencies = ["numpy", "pandas", "yfinance"]
+
+[tool.setuptools.packages.find]
+where = ["src"]

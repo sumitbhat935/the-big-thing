@@ -1,0 +1,7 @@
+{
+  "cash": 1000.0,
+  "holdings": [
+    { "ticker": "AAPL", "shares": 10, "entry_price": 190.0 },
+    { "ticker": "MSFT", "shares": 5, "entry_price": 420.0 }
+  ]
+}
