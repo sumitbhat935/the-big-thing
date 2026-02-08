@@ -1,26 +1,65 @@
 {
-  "tickers": ["AAPL", "MSFT", "NVDA", "AMZN", "META"],
-  "morning_minutes": 90,
-  "interval": "5m",
-  "period": "10d",
-  "top_n": 15,
-  "weights": {
-    "gap_pct": 0.2,
-    "early_return": 0.25,
-    "volume_spike": 0.2,
-    "trend_slope": 0.2,
-    "rsi": 0.15
+  "portfolio": {
+    "total_value": 100000,
+    "max_positions": 12,
+    "min_cash_pct": 10,
+    "max_risk_per_trade_pct": 1.0,
+    "holdings": [
+      {"ticker": "AAPL", "shares": 50, "avg_cost": 185.00},
+      {"ticker": "MSFT", "shares": 30, "avg_cost": 380.00}
+    ]
   },
-  "factor_directions": {
-    "gap_pct": "high",
-    "early_return": "high",
-    "volume_spike": "high",
-    "trend_slope": "high",
-    "rsi": "high"
+  "universe": {
+    "sources": ["sp500", "nasdaq100"],
+    "min_price": 10.0,
+    "max_price": 10000.0,
+    "min_avg_volume": 1000000,
+    "batch_size": 50
   },
-  "risk": {
-    "portfolio_stop_loss_pct": -0.5,
-    "take_profit_pct": 3.0,
-    "check_interval_minutes": 15
-  }
+  "regime": {
+    "spy_ticker": "SPY",
+    "vix_ticker": "^VIX",
+    "treasury_ticker": "^TNX",
+    "lookback_days": 250,
+    "ma_long": 200,
+    "ma_short": 50,
+    "trend_window": 20,
+    "vix_elevated_threshold": 25.0
+  },
+  "scanner": {
+    "rsi_min": 45,
+    "rsi_max": 65,
+    "rsi_period": 14,
+    "volume_expansion_threshold": 1.2,
+    "volume_lookback": 30,
+    "earnings_blackout_days": 5,
+    "top_n": 10,
+    "weight_trend": 0.30,
+    "weight_fundamental": 0.25,
+    "weight_relative_strength": 0.20,
+    "weight_volume": 0.15,
+    "weight_valuation": 0.10
+  },
+  "email": {
+    "enabled": false,
+    "smtp_server": "smtp.gmail.com",
+    "smtp_port": 587,
+    "sender_email": "you@gmail.com",
+    "sender_password": "YOUR_GMAIL_APP_PASSWORD_HERE",
+    "recipient_email": "you@gmail.com"
+  },
+  "data": {
+    "min_data_coverage_pct": 80,
+    "max_retries": 3,
+    "retry_delay_seconds": 5,
+    "daily_lookback_days": 300
+  },
+  "external_holdings": [
+    {
+      "name": "ETH",
+      "quantity": 0,
+      "avg_cost": 0,
+      "notes": "Optional: notes-only holdings outside the stock system."
+    }
+  ]
 }

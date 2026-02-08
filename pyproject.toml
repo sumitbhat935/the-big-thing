@@ -1,13 +1,21 @@
 [build-system]
-requires = ["setuptools>=61.0"]
-build-backend = "setuptools.build_meta"
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.backends._legacy:_Backend"
 
 [project]
 name = "bigthing"
-version = "0.1.0"
-description = "Stock recommendation and portfolio monitoring tool."
+version = "2.0.0"
+description = "Portfolio Intelligence System — disciplined, rule-based portfolio management for swing and position trading."
 requires-python = ">=3.9"
-dependencies = ["numpy", "pandas", "yfinance"]
+dependencies = [
+    "numpy",
+    "pandas",
+    "yfinance",
+    "lxml",
+]
+
+[project.scripts]
+bigthing = "bigthing.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

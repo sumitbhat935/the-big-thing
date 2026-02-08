@@ -1,15 +1,25 @@
+# Python
 __pycache__/
 *.pyc
 *.pyo
-*.pyd
-.Python
 *.egg-info/
-build/
 dist/
+build/
+.eggs/
+
+# Environment
 .venv/
+venv/
 .env
-.pytest_cache/
-.mypy_cache/
-.ruff_cache/
-.idea/
+
+# IDE
 .vscode/
+.idea/
+
+# BigThing runtime (sensitive / generated)
+config.json
+report.json
+recommendations.json
+alerts.json
+.tmp/
+*.log
